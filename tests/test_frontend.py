@@ -58,6 +58,6 @@ def test_relato_confirmado_alimenta_historico_da_sessao(monkeypatch):
     app.checkbox[0].check().run()
     botao(app, "Enviar relato").click().run()
     assert not app.exception
-    history = app.session_state.filtered_state.get("historico", [])
+    history = app.session_state["historico"]
     assert any(item["id"] == "protocolo-sintetico" for item in history)
-    assert app.session_state.filtered_state.get("analise_pendente") is None
+    assert app.session_state["analise_pendente"] is None

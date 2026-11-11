@@ -28,6 +28,12 @@ services:
       dockerfile: frontend/Dockerfile
     environment:
       API_BASE_URL: http://api:8000
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8501/_stcore/health', timeout=3)"]
+      interval: 5s
+      timeout: 4s
+      retries: 10
+      start_period: 10s
     depends_on:
       api:
         condition: service_healthy
