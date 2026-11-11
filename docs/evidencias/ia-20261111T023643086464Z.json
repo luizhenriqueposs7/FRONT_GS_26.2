@@ -1,0 +1,43 @@
+{
+  "executado_em_utc": "2026-11-11T02:36:43.086464+00:00",
+  "modelo": "openai/gpt-oss-20b",
+  "tipo": "LLM real via API",
+  "casos": [
+    {
+      "entrada": "Há um buraco grande no asfalto perto da praça.",
+      "categoria_esperada": "Buraco",
+      "obtida": {
+        "categoria_sugerida": "Buraco",
+        "prioridade_sugerida": "Média",
+        "resumo": "Buraco grande no asfalto próximo à praça no bairro Centro.",
+        "justificativa": "Relato menciona buraco grande no asfalto perto da praça, indicando possível risco de acidentes.",
+        "fonte_analise": "llm"
+      },
+      "aprovado": true
+    },
+    {
+      "entrada": "Poste apagado e fio exposto na calçada.",
+      "categoria_esperada": "Iluminação",
+      "obtida": {
+        "categoria_sugerida": "Iluminação",
+        "prioridade_sugerida": "Alta",
+        "resumo": "Poste de iluminação apagado com fio exposto na calçada.",
+        "justificativa": "O relato menciona poste apagado e fio exposto na calçada, indicando risco de choque elétrico e queda.",
+        "fonte_analise": "llm"
+      },
+      "aprovado": true
+    },
+    {
+      "entrada": "A calçada está quebrada e dificulta a passagem.",
+      "categoria_esperada": "Calçada",
+      "obtida": {
+        "categoria_sugerida": "Calçada",
+        "prioridade_sugerida": "Média",
+        "resumo": "Calçada quebrada dificulta passagem.",
+        "justificativa": "Relato indica calçada quebrada e que dificulta a passagem.",
+        "fonte_analise": "llm"
+      },
+      "aprovado": true
+    }
+  ]
+}

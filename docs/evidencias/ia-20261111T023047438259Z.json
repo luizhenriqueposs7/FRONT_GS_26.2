@@ -1,0 +1,43 @@
+{
+  "executado_em_utc": "2026-11-11T02:30:47.438259+00:00",
+  "modelo": "openai/gpt-oss-20b",
+  "tipo": "LLM real via API",
+  "casos": [
+    {
+      "entrada": "Há um buraco grande no asfalto perto da praça.",
+      "categoria_esperada": "Buraco",
+      "obtida": {
+        "categoria_sugerida": "Buraco",
+        "prioridade_sugerida": "Alta",
+        "resumo": "Buraco grande no asfalto próximo à praça no bairro Centro.",
+        "justificativa": "O relato indica um buraco de tamanho considerável no asfalto, o que pode representar risco de acidentes para pedestres e veículos, especialmente em área de alto tráfego próximo à praça. Recomenda-se revisão e reparo imediato.",
+        "fonte_analise": "llm"
+      },
+      "aprovado": true
+    },
+    {
+      "entrada": "Poste apagado e fio exposto na calçada.",
+      "categoria_esperada": "Iluminação",
+      "obtida": {
+        "categoria_sugerida": "Iluminação",
+        "prioridade_sugerida": "Alta",
+        "resumo": "Poste de iluminação apagado com fio exposto na calçada.",
+        "justificativa": "O poste de iluminação está desligado e há fio exposto na calçada, representando risco de choque elétrico e queda. Necessita de revisão imediata para garantir segurança pública.",
+        "fonte_analise": "llm"
+      },
+      "aprovado": true
+    },
+    {
+      "entrada": "A calçada está quebrada e dificulta a passagem.",
+      "categoria_esperada": "Calçada",
+      "obtida": {
+        "categoria_sugerida": "Calçada",
+        "prioridade_sugerida": "Alta",
+        "resumo": "Calçada quebrada impede passagem segura.",
+        "justificativa": "A calçada apresenta fissuras e buracos que dificultam a circulação de pedestres, representando risco de tropeços e quedas. A reparação é necessária para garantir acessibilidade e segurança no bairro Centro.",
+        "fonte_analise": "llm"
+      },
+      "aprovado": true
+    }
+  ]
+}
