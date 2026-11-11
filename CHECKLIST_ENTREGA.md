@@ -12,7 +12,7 @@
 | Justificativa, fonte, ODS e ética | README completo para o escopo da POC; sem alegações de impacto medido. |
 | Três casos reais da IA | Executados; primeiro resultado, ajuste do prompt e reteste preservados. |
 | Três pessoas e ajuste decorrente de feedback | Pendente de observações reais. Preencher README e docs/validacao.md após a aplicação. |
-| Docker funcionando | Configuração e workflow preparados. Execução depende de ambiente Docker/resultado real do CI; não comprovada localmente. |
+| Docker funcionando | Construção, inicialização e endpoints aprovados fora da máquina local no GitHub Actions: https://github.com/luizhenriqueposs7/FRONT_GS_26.2/actions/runs/42948346515. Incluir essa demonstração no vídeo. |
 | GitHub público | Código e evidências publicados em https://github.com/luizhenriqueposs7/FRONT_GS_26.2. A chave privada não foi publicada. |
 | Vídeo até cinco minutos | Roteiro fala por fala em docs/roteiro-video.md; gravação/montagem final e áudio ainda pendentes. |
 
