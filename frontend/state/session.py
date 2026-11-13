@@ -4,12 +4,7 @@ import streamlit as st
 
 
 def inicializar_estado():
-    """
-    Inicializa valores persistentes durante a sessão do Streamlit.
-
-    VÍDEO: o Streamlit reexecuta o script após interações. O session_state
-    preserva o identificador e a análise pendente entre esses reruns.
-    """
+    """Inicializa os dados persistentes entre reruns do Streamlit."""
 
     if "cidadao_id" not in st.session_state:
         # Identificador temporário da sessão, não é uma conta de usuário.
@@ -24,6 +19,11 @@ def inicializar_estado():
 
     if "ultimo_relato" not in st.session_state:
         st.session_state.ultimo_relato = None
+
+
+def iniciar_nova_analise():
+    limpar_analise_pendente()
+    st.session_state.ultimo_relato = None
 
 
 def guardar_analise(bairro: str, descricao: str, analise: dict):

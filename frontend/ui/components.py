@@ -50,12 +50,7 @@ def mostrar_prioridade(prioridade: str):
 
 
 def mostrar_cartao_relato(relato: dict):
-    """
-    Componente visual reutilizável para mostrar os dados de um relato.
-
-    VÍDEO: este componente é chamado pela tela de solicitações e evita
-    repetir o mesmo bloco de interface em vários lugares.
-    """
+    """Apresenta um relato com status, prioridade e protocolo."""
 
     with st.container(border=True):
         st.subheader(f"{relato['categoria']} — {relato['bairro']}")

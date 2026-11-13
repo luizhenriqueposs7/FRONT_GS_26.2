@@ -39,6 +39,26 @@ def _tratar_resposta(resposta: requests.Response):
                                 "Não foi possível concluir a solicitação. Tente novamente."))
 
 
+def _validar_relatos(dados) -> list[dict]:
+    campos = (
+        "id", "cidadao_id", "descricao", "bairro", "categoria", "prioridade",
+        "resumo", "status", "observacao_gestor", "criado_em", "atualizado_em",
+    )
+    if not isinstance(dados, list) or any(
+        not isinstance(relato, dict)
+        or any(not isinstance(relato.get(campo), str) for campo in campos)
+        or relato["categoria"] not in ("Buraco", "Iluminação", "Calçada", "Outro")
+        or relato["prioridade"] not in ("Baixa", "Média", "Alta")
+        or relato["status"] not in (
+            "Recebido", "Em análise", "Encaminhado", "Em atendimento",
+            "Concluído", "Não confirmado",
+        )
+        for relato in dados
+    ):
+        raise APIError("O serviço devolveu uma resposta incompleta. Tente novamente.")
+    return dados
+
+
 def _requisitar(metodo: str, caminho: str, *, timeout=15, **kwargs):
     try:
         resposta = _sessao_http().request(
@@ -66,12 +86,12 @@ def criar_relato(dados: dict) -> dict:
 @st.cache_data(ttl=30, show_spinner=False)
 def listar_meus_relatos(cidadao_id: str) -> list[dict]:
     # O identificador faz parte da chave do cache: históricos não se misturam.
-    return _requisitar("GET", f"/relatos/me/{cidadao_id}")
+    return _validar_relatos(_requisitar("GET", f"/relatos/me/{cidadao_id}"))
 
 
 @st.cache_data(ttl=30, show_spinner=False)
 def listar_relatos_gestor(chave: str) -> list[dict]:
-    return _requisitar("GET", "/gestor/relatos", headers={"X-Manager-Key": chave})
+    return _validar_relatos(_requisitar("GET", "/gestor/relatos", headers={"X-Manager-Key": chave}))
 
 
 def atualizar_status(relato_id: str, status: str, observacao: str, chave: str) -> dict:

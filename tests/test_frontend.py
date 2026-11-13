@@ -1,5 +1,6 @@
 from pathlib import Path
 
+import requests
 from streamlit.testing.v1 import AppTest
 
 from frontend.providers import api_client
@@ -61,3 +62,31 @@ def test_relato_confirmado_alimenta_historico_da_sessao(monkeypatch):
     history = app.session_state["historico"]
     assert any(item["id"] == "protocolo-sintetico" for item in history)
     assert app.session_state["analise_pendente"] is None
+
+
+def test_falha_na_nova_analise_nao_mostra_sucesso_do_relato_anterior(monkeypatch):
+    def falhar(**kwargs):
+        raise api_client.APIError("Não foi possível conectar ao serviço. Tente novamente.")
+    monkeypatch.setattr(api_client, "analisar_relato", falhar)
+    app = AppTest.from_file(str(APP), default_timeout=20)
+    app.session_state["ultimo_relato"] = {"id": "protocolo-anterior"}
+    app.run()
+    assert app.success
+    analisar(app)
+    assert app.error
+    assert not app.success
+    assert app.session_state["ultimo_relato"] is None
+
+
+def test_painel_trata_json_fora_do_contrato_sem_expor_excecao(monkeypatch):
+    response = requests.Response()
+    response.status_code = 200
+    response._content = b'{"unexpected":123}'
+    monkeypatch.setattr(requests.Session, "request", lambda *args, **kwargs: response)
+    api_client.listar_relatos_gestor.clear()
+    app = AppTest.from_file(str(APP), default_timeout=20).run()
+    app.toggle[1].set_value(True).run()
+    app.text_input[0].set_value("chave-sintetica-da-regressao").run()
+    assert not app.exception
+    assert len(app.error) == 1
+    assert "resposta incompleta" in app.error[0].value

@@ -2,7 +2,11 @@ import streamlit as st
 
 from frontend.providers import api_client
 from frontend.providers.api_client import APIError
-from frontend.state.session import guardar_analise, limpar_analise_pendente, registrar_no_historico
+from frontend.state.session import (
+    guardar_analise,
+    iniciar_nova_analise,
+    registrar_no_historico,
+)
 from frontend.ui.components import mostrar_prioridade
 
 
@@ -35,11 +39,9 @@ def renderizar():
             height=160,
             help="Descreva o problema e um ponto de referência público.",
         )
-        enviar_analise = st.form_submit_button("Analisar relato")
+        enviar_analise = st.form_submit_button("Analisar relato", on_click=iniciar_nova_analise)
 
     if enviar_analise:
-        limpar_analise_pendente()
-        st.session_state.ultimo_relato = None
         # VALIDAÇÃO no front-end: dá retorno imediato ao cidadão.
         # O back-end também valida os dados; a interface não é a única barreira.
         if len(bairro.strip()) < 2:

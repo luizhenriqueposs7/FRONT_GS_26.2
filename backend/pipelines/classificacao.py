@@ -5,12 +5,7 @@ from backend.schemas.relato import AnaliseResponse
 
 
 def _classificacao_demonstracao(descricao: str) -> AnaliseResponse:
-    """
-    Classificação simples para testar a aplicação sem credenciais de LLM.
-
-    VÍDEO: explique que este modo usa regras e palavras-chave; ele não
-    representa um modelo de IA conectado nem uma avaliação de precisão.
-    """
+    """Classifica por regras somente no modo demonstrativo explícito."""
 
     texto = descricao.lower()
 

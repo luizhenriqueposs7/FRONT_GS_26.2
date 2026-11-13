@@ -15,12 +15,7 @@ class LLMNaoConfigurado(LLMIndisponivel):
 
 
 def analisar_com_llm(descricao: str, bairro: str) -> AnaliseResponse:
-    """
-    Envia o relato para um serviço compatível com a API de chat.
-
-    VÍDEO: este é o ponto que mostra a chamada ao modelo acontecendo
-    no back-end. A chave não é enviada pelo front-end.
-    """
+    """Consulta o LLM no back-end e valida a resposta estruturada."""
 
     # As credenciais são lidas do ambiente, não ficam escritas no código.
     base_url = os.getenv("LLM_BASE_URL", "").strip()

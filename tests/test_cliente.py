@@ -8,6 +8,14 @@ import streamlit as st
 from frontend.providers import api_client
 
 
+RELATO = {
+    "id": "protocolo-sintetico", "cidadao_id": "cidadao-a", "bairro": "Centro",
+    "descricao": "Há um buraco na praça.", "categoria": "Buraco", "prioridade": "Média",
+    "resumo": "Buraco na praça.", "status": "Recebido", "observacao_gestor": "",
+    "criado_em": "2026-11-13T12:00:00+00:00", "atualizado_em": "2026-11-13T12:00:00+00:00",
+}
+
+
 @pytest.fixture(autouse=True)
 def limpar_caches():
     st.cache_data.clear()
@@ -55,12 +63,23 @@ def test_cache_separa_historicos_e_evitar_consultas_repetidas(monkeypatch):
     calls = []
     def transporte(self, method, url, **kwargs):
         calls.append(url)
-        return resposta(200, [{"id": url.rsplit("/", 1)[-1]}])
+        return resposta(200, [dict(RELATO, id=url.rsplit("/", 1)[-1])])
     monkeypatch.setattr(requests.Session, "request", transporte)
-    assert api_client.listar_meus_relatos("cidadao-a") == [{"id": "cidadao-a"}]
-    assert api_client.listar_meus_relatos("cidadao-a") == [{"id": "cidadao-a"}]
-    assert api_client.listar_meus_relatos("cidadao-b") == [{"id": "cidadao-b"}]
+    assert api_client.listar_meus_relatos("cidadao-a")[0]["id"] == "cidadao-a"
+    assert api_client.listar_meus_relatos("cidadao-a")[0]["id"] == "cidadao-a"
+    assert api_client.listar_meus_relatos("cidadao-b")[0]["id"] == "cidadao-b"
     assert len(calls) == 2
+
+
+@pytest.mark.parametrize("consulta", [api_client.listar_meus_relatos, api_client.listar_relatos_gestor])
+@pytest.mark.parametrize("payload", [
+    {"unexpected": 123}, [{}], [dict(RELATO, categoria={"nome": "Buraco"})],
+    [dict(RELATO, status="Status desconhecido")],
+], ids=["objeto-em-vez-de-lista", "campos-ausentes", "tipo-invalido", "status-invalido"])
+def test_lista_fora_do_contrato_vira_erro_compreensivel(monkeypatch, consulta, payload):
+    monkeypatch.setattr(requests.Session, "request", lambda *args, **kwargs: resposta(200, payload))
+    with pytest.raises(api_client.APIError, match="resposta incompleta"):
+        consulta("identificador-sintetico")
 
 
 def test_mutacoes_invalidam_historico_e_cache_da_gestao(monkeypatch, cliente):
