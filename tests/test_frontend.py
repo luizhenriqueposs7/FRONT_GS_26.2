@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import requests
+import pytest
 from streamlit.testing.v1 import AppTest
 
 from frontend.providers import api_client
@@ -90,3 +91,51 @@ def test_painel_trata_json_fora_do_contrato_sem_expor_excecao(monkeypatch):
     assert not app.exception
     assert len(app.error) == 1
     assert "resposta incompleta" in app.error[0].value
+
+
+def test_resumo_editado_pelo_cidadao_e_enviado(monkeypatch):
+    enviados = []
+    monkeypatch.setattr(api_client, "analisar_relato", lambda **kwargs: dict(ANALISE))
+    def criar(data):
+        enviados.append(data)
+        return {**data, "id": "protocolo-editado", "status": "Recebido", "observacao_gestor": ""}
+    monkeypatch.setattr(api_client, "criar_relato", criar)
+    app = AppTest.from_file(str(APP), default_timeout=20).run()
+    analisar(app)
+    resumo = next(item for item in app.text_area if item.label.startswith("Resumo"))
+    resumo.set_value("  Buraco no asfalto ao lado da praça pública.  ").run()
+    app.checkbox[0].check().run()
+    botao(app, "Enviar relato").click().run()
+    assert not app.exception
+    assert enviados[0]["resumo"] == "Buraco no asfalto ao lado da praça pública."
+    assert any(item.value == "protocolo-editado" for item in app.code)
+
+
+@pytest.mark.parametrize("resumo_invalido", ["   ", "abc"])
+def test_resumo_editado_curto_nao_e_enviado(monkeypatch, resumo_invalido):
+    enviados = []
+    monkeypatch.setattr(api_client, "analisar_relato", lambda **kwargs: dict(ANALISE))
+    monkeypatch.setattr(api_client, "criar_relato", lambda data: enviados.append(data))
+    app = AppTest.from_file(str(APP), default_timeout=20).run()
+    analisar(app)
+    next(item for item in app.text_area if item.label.startswith("Resumo")).set_value(resumo_invalido).run()
+    app.checkbox[0].check().run()
+    botao(app, "Enviar relato").click().run()
+    assert not app.exception
+    assert not enviados
+    assert "pelo menos 5 caracteres" in app.error[0].value
+
+
+def test_botao_do_protocolo_abre_acompanhamento_com_explicacao_do_status(monkeypatch):
+    relato = {"id": "protocolo-acompanhar", "categoria": "Buraco", "bairro": "Centro",
+              "prioridade": "Média", "status": "Em análise", "resumo": "Buraco na praça.",
+              "observacao_gestor": ""}
+    monkeypatch.setattr(api_client, "listar_meus_relatos", lambda cidadao_id: [relato])
+    app = AppTest.from_file(str(APP), default_timeout=20)
+    app.session_state["ultimo_relato"] = relato
+    app.run()
+    botao(app, "Acompanhar meu relato").click().run()
+    assert not app.exception
+    assert app.session_state["pagina_cidadao"] == "Minhas solicitações"
+    assert any(item.value == "protocolo-acompanhar" for item in app.code)
+    assert any("avaliando as informações" in item.value for item in app.caption)

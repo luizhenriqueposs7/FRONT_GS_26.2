@@ -26,6 +26,10 @@ def iniciar_nova_analise():
     st.session_state.ultimo_relato = None
 
 
+def abrir_acompanhamento():
+    st.session_state.pagina_cidadao = "Minhas solicitações"
+
+
 def guardar_analise(bairro: str, descricao: str, analise: dict):
     st.session_state.analise_pendente = {
         "id": str(uuid4()), "bairro": bairro, "descricao": descricao, "analise": analise,

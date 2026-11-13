@@ -22,7 +22,7 @@ Como contexto nacional, o Censo 2022 identificou que **68,8% dos moradores das �
 2. A interface valida campos obrigatórios e tamanhos e envia o pedido por HTTP.
 3. O FastAPI normaliza e valida com Pydantic; o provedor chama o LLM no back-end.
 4. O JSON retornado é validado antes de apresentar resumo, categoria, prioridade e justificativa.
-5. O cidadão confirma ou corrige a sugestão e marca uma confirmação específica daquela análise.
+5. O cidadão confirma ou corrige categoria, prioridade e resumo e marca uma confirmação específica daquela análise.
 6. A API registra o relato no SQLite e gera o protocolo. A gestão pode atualizar o andamento.
 
 A confirmação é reiniciada em cada análise. Uma nova análise com falha não permite enviar a sugestão antiga. O protocolo representa registro nesta POC; não comprova abertura de chamado oficial na prefeitura.
@@ -138,7 +138,7 @@ python -m pytest -v --junitxml=docs/evidencias/testes.xml
 
 No Windows com o ambiente virtual, substitua `python` por `.\.venv\Scripts\python.exe`. Os testes usam banco temporário, credenciais sintéticas e respostas simuladas nas verificações de contrato do LLM; não gastam a chave real. Cobrem API, classificação demonstrativa, validação, falhas do provedor, erros do cliente, cache e o ciclo de confirmação/histórico com Streamlit AppTest.
 
-**Verificação de 13/11/2026:** 38 testes aprovados, com [relatório JUnit](docs/evidencias/testes.xml). As regressões também verificam que listas da API com formato, campos, tipos ou status inválidos recebem mensagem compreensível antes de chegar às telas. Ao iniciar outra análise, o protocolo e a mensagem de sucesso anteriores são limpos no callback do formulário, antes do rerun, inclusive quando a nova tentativa falha.
+**Verificação de 13/11/2026:** 42 testes aprovados, com [relatório JUnit](docs/evidencias/testes.xml). As regressões verificam listas da API fora do contrato, limpeza de mensagens antigas antes do rerun, edição/persistência do resumo, rejeição de resumo vazio ou curto e acesso ao acompanhamento pelo botão do protocolo.
 
 Para gerar **evidência real** com três casos, inicie a API com `.env` e `DEMO_MODE=false`, e execute:
 
@@ -166,17 +166,17 @@ Estes casos sintéticos não estimam acurácia geral nem substituem validação 
 
 ## Validação com pessoas
 
-**Situação: ainda não comprovada.** É necessário executar o roteiro com ao menos três pessoas do público-alvo ou próximas dele e registrar pelo menos um ajuste decorrente do feedback. Não confundir testes automatizados com usabilidade.
+**Situação: registros de três participantes recebidos do grupo e ajustes implementados.** As sessões foram realizadas em sequência, antes das últimas correções. A data e o identificador da versão testada não foram informados. Os participantes são identificados como P1, P2 e P3 na documentação pública.
 
-O roteiro e a ficha estão em [docs/validacao.md](docs/validacao.md). Usar identificadores anônimos e obter autorização para observar as tarefas. Não registrar dados pessoais ou inventar participantes.
+As [observações e a comparação antes/depois](docs/evidencias/usabilidade-20261113.md) preservam o feedback fornecido e distinguem a sessão com pessoas da verificação técnica posterior. O [roteiro e a ficha](docs/validacao.md) ficam disponíveis para uma próxima coleta.
 
-| Participante | Perfil próximo do público, sem identificação | Observação real | Ajuste e resultado |
+| Participante | Perfil geral | Observação relatada | Ajuste implementado e verificação |
 |---|---|---|---|
-| P1 | Pendente | Pendente | Pendente |
-| P2 | Pendente | Pendente | Pendente |
-| P3 | Pendente | Pendente | Pendente |
+| P1 | Estudante universitária, familiarizada com aplicativos | Dúvida sobre poder editar as sugestões antes do envio. | Aviso explícito e resumo editável; edição/persistência e validação verificadas. |
+| P2 | Uso cotidiano de aplicativos; familiaridade intermediária | Dificuldade para localizar o acompanhamento e compreender termos. | Protocolo destacado como número de acompanhamento e botão direto para o histórico; navegação verificada. |
+| P3 | Profissional administrativa, uso frequente de serviços digitais | Falta de indicação das etapas e de explicação dos status. | Sequência de etapas, descrição do status atual e glossário; interface conferida. |
 
-Após os testes, substituir as pendências pelos resultados reais e descrever o aprendizado e o ajuste realizado. A documentação preparada não substitui essa execução.
+O relato de edição do resumo por P3 aguarda confirmação: a versão anterior disponibilizava esse conteúdo somente para leitura. A edição foi adicionada nesta revisão. Não foi informado reteste com os participantes após os ajustes; melhora de compreensão é resultado esperado, sem medida comparativa de usabilidade.
 
 ## Entrega e vídeo
 
@@ -184,10 +184,11 @@ O enunciado exige um único repositório **público no GitHub**, link submetido 
 
 - Repositório público informado pelo grupo: [luizhenriqueposs7/FRONT_GS_26.2](https://github.com/luizhenriqueposs7/FRONT_GS_26.2).
 - Vídeo final produzido em 12/11/2026: **5min00s**, MP4 H.264/AAC, 1600 × 900, com narração do grupo e demonstração da solução. No ZIP local de entrega, o arquivo está em `docs/video/ZelaBairro_Final_5min.mp4`.
+- Atualização da gravação: **pendente**. O vídeo de 12/11 antecede os ajustes de usabilidade e ainda apresenta a validação com pessoas como pendente; a próxima versão deve mostrar os registros recebidos e as mudanças implementadas.
 - Publicação do vídeo: **pendente**. A gravação permanece local; antes da submissão, hospedar no YouTube como não listado ou adicionar o MP4 ao repositório e registrar aqui o link de acesso. A produção do arquivo não equivale à publicação.
 - Roteiro fala por fala: [docs/roteiro-video.md](docs/roteiro-video.md).
 - Verificação Docker: aprovada no GitHub Actions, com link acima; o vídeo apresenta essa evidência.
 
 O workflow em `.github/workflows/validacao.yml` executa testes e um smoke test Docker quando o projeto é enviado ao GitHub. A execução aprovada acima comprova os resultados do código no commit indicado; não substitui os testes de usabilidade.
 
-Antes de submeter no Portal, concluir os testes com três pessoas, registrar as observações e o ajuste decorrente do feedback e informar o acesso ao vídeo. Os itens técnicos verificados estão discriminados em [CHECKLIST_ENTREGA.md](CHECKLIST_ENTREGA.md).
+Antes de submeter no Portal, conferir os dados de coleta sinalizados no relatório, atualizar a gravação com as evidências de usabilidade e informar o acesso ao vídeo. Os itens verificados estão discriminados em [CHECKLIST_ENTREGA.md](CHECKLIST_ENTREGA.md).

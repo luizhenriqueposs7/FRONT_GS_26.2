@@ -3,6 +3,7 @@ import streamlit as st
 from frontend.providers import api_client
 from frontend.providers.api_client import APIError
 from frontend.state.session import (
+    abrir_acompanhamento,
     guardar_analise,
     iniciar_nova_analise,
     registrar_no_historico,
@@ -20,11 +21,13 @@ def renderizar():
         "Descreva o que está acontecendo. A análise é uma sugestão "
         "e você poderá revisá-la antes do envio."
     )
+    st.info("1. Descreva o problema → 2. Revise a sugestão → 3. Envie e acompanhe")
 
     if st.session_state.ultimo_relato:
         st.success("Relato registrado.")
-        st.write(f"**Seu protocolo:** `{st.session_state.ultimo_relato['id']}`")
-        st.write("Você pode acompanhar o status em Minhas solicitações.")
+        st.subheader("Seu número de acompanhamento (protocolo)")
+        st.code(st.session_state.ultimo_relato["id"], language=None)
+        st.button("Acompanhar meu relato", on_click=abrir_acompanhamento)
 
     # O formulário agrupa a entrada e evita o envio a cada alteração de campo.
     with st.form("formulario_relato"):
@@ -74,6 +77,7 @@ def renderizar():
 
     st.divider()
     st.subheader("Revise a sugestão da IA")
+    st.info("Você pode editar a categoria, a prioridade e o resumo antes de confirmar o envio.")
     analise = pendente["analise"]
 
     # Identifica claramente quando o resultado veio das regras demonstrativas.
@@ -83,7 +87,13 @@ def renderizar():
             "não um modelo de IA conectado."
         )
 
-    st.write(f"**Resumo sugerido:** {analise['resumo']}")
+    resumo = st.text_area(
+        "Resumo — revise ou edite antes de enviar",
+        value=analise["resumo"],
+        max_chars=300,
+        height=100,
+        key=f"resumo_{pendente['id']}",
+    )
     st.write(f"**Por que foi sugerido:** {analise['justificativa']}")
     mostrar_prioridade(analise["prioridade_sugerida"])
 
@@ -111,13 +121,17 @@ def renderizar():
             st.warning("Marque a confirmação antes de enviar.")
             return
 
+        if len(resumo.strip()) < 5:
+            st.error("Escreva um resumo com pelo menos 5 caracteres.")
+            return
+
         dados = {
             "cidadao_id": st.session_state.cidadao_id,
             "descricao": pendente["descricao"],
             "bairro": pendente["bairro"],
             "categoria": categoria,
             "prioridade": prioridade,
-            "resumo": analise["resumo"],
+            "resumo": resumo.strip(),
         }
 
         try:

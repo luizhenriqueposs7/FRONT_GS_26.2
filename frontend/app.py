@@ -54,6 +54,7 @@ else:
     pagina = st.sidebar.radio(
         "Escolha uma tela",
         ["Registrar um problema", "Minhas solicitações"],
+        key="pagina_cidadao",
     )
 
     if pagina == "Registrar um problema":

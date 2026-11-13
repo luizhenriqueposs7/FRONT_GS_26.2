@@ -1,6 +1,8 @@
-# Validação com pessoas — coleta real
+# Validação com pessoas
 
-Esta ficha é um instrumento de coleta, não uma afirmação de que o teste já ocorreu. A tabela resumida do README deve receber os resultados reais ao final.
+Os registros de P1, P2 e P3 foram fornecidos pelo grupo em 13/11/2026 e estão em [observações, ajustes e comparação visual](evidencias/usabilidade-20261113.md). Segundo o grupo, as sessões ocorreram em sequência, antes das últimas correções. A data e o identificador da versão testada não foram informados. O item de P3 sobre edição do resumo está sinalizado para confirmação.
+
+Os ajustes decorrentes do feedback foram implementados e verificados tecnicamente. Um reteste com os participantes após as mudanças não foi informado. O roteiro e a ficha abaixo permanecem disponíveis para registrar a próxima sessão; campos em branco não representam novos resultados.
 
 ## Preparação
 
@@ -10,8 +12,8 @@ Convidar três moradores ou pessoas próximas do público. Explicar a POC, pedir
 
 1. Sem orientar o caminho, pedir que a pessoa encontre onde registrar um problema.
 2. Pedir um relato fictício de calçada, buraco ou iluminação.
-3. Pedir que explique a sugestão e corrija categoria/prioridade, se necessário.
-4. Pedir que confirme, envie e encontre o protocolo no histórico.
+3. Pedir que explique a sugestão e corrija categoria, prioridade e resumo, se necessário.
+4. Pedir que confirme, envie e use “Acompanhar meu relato” para encontrar o protocolo no histórico.
 5. Perguntar: “O que significa este status? Você entende que isto não é atendimento oficial?”
 6. Perguntar: “Qual foi a maior dificuldade e o que você mudaria?”
 

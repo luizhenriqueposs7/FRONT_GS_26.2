@@ -2,11 +2,16 @@ import streamlit as st
 
 from frontend.providers import api_client
 from frontend.providers.api_client import APIError
-from frontend.ui.components import mostrar_cartao_relato
+from frontend.ui.components import DESCRICOES_STATUS, mostrar_cartao_relato
 
 
 def renderizar():
     st.header("Minhas solicitações")
+    st.write("Acompanhe os relatos enviados nesta sessão pelo número de acompanhamento (protocolo).")
+    st.caption("Os status são atualizações desta demonstração e não abrem atendimento municipal automaticamente.")
+    with st.expander("O que significa cada status?"):
+        for status, explicacao in DESCRICOES_STATUS.items():
+            st.markdown(f"**{status}:** {explicacao}")
 
     if st.button("Atualizar solicitações"):
         api_client.listar_meus_relatos.clear(st.session_state.cidadao_id)
