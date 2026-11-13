@@ -12,7 +12,7 @@
 | Justificativa, fonte, ODS e ética | README completo para o escopo da POC; sem alegações de impacto medido. |
 | Três casos reais da IA | Executados; primeiro resultado, ajuste do prompt e reteste preservados. |
 | Três pessoas e ajuste decorrente de feedback | Pendente de observações reais. Preencher README e docs/validacao.md após a aplicação. |
-| Docker funcionando | Construção, inicialização e endpoints aprovados fora da máquina local no GitHub Actions: https://github.com/luizhenriqueposs7/FRONT_GS_26.2/actions/runs/42948346515. O vídeo apresenta a evidência dessa execução. |
+| Docker funcionando | Construção, inicialização e endpoints aprovados fora da máquina local no GitHub Actions: https://github.com/luizhenriqueposs7/FRONT_GS_26.2/actions/runs/43368906764. O vídeo apresenta a evidência dessa execução. |
 | GitHub público | Código e evidências publicados em https://github.com/luizhenriqueposs7/FRONT_GS_26.2. A chave privada não foi publicada. |
 | Vídeo até cinco minutos | Arquivo final produzido e verificado: 300 segundos, 1600 × 900, H.264/AAC. Incluído no ZIP local em docs/video/ZelaBairro_Final_5min.mp4. |
 | Publicação e acesso ao vídeo | Pendente: manter o arquivo local até definir a hospedagem, publicar no YouTube como não listado ou no repositório e inserir o link no README. |

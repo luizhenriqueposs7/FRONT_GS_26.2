@@ -88,7 +88,7 @@ docker compose up --build
 
 O primeiro build pode demorar. O Compose espera a API responder ao healthcheck. O banco usa o volume `zelabairro_data`. Para interromper sem apagar os dados, execute `docker compose down`; não acrescente `-v` se quiser preservar os registros.
 
-**Execução comprovada fora da máquina do grupo:** [GitHub Actions — execução aprovada](https://github.com/luizhenriqueposs7/FRONT_GS_26.2/actions/runs/42948346515). Os jobs `testes` e `docker` passaram no commit `2eab16a`. O Docker construiu e iniciou os dois serviços, aguardou os healthchecks da API e da interface e verificou os endpoints. O smoke test usa dados sintéticos e regras explícitas; os testes reais do LLM estão registrados separadamente abaixo. O vídeo final exibe a evidência do CI e o fluxo local com IA real.
+**Execução comprovada fora da máquina do grupo:** [GitHub Actions — execução aprovada](https://github.com/luizhenriqueposs7/FRONT_GS_26.2/actions/runs/43368906764). Os jobs `testes` e `docker` passaram no commit `c1f83f2`, incluindo os 38 testes. O Docker construiu e iniciou os dois serviços, aguardou os healthchecks da API e da interface e verificou os endpoints. O smoke test usa dados sintéticos e regras explícitas; os testes reais do LLM estão registrados separadamente abaixo. O vídeo final exibe a evidência do CI e o fluxo local com IA real.
 
 `CORS_ORIGINS` deve conter a URL exata da interface, separando múltiplas origens por vírgula. O padrão local é `http://localhost:8501`; não use `*` em produção. Em hospedagem, configure HTTPS, segredos no ambiente e o endereço público da API.
 
@@ -183,7 +183,7 @@ Após os testes, substituir as pendências pelos resultados reais e descrever o 
 O enunciado exige um único repositório **público no GitHub**, link submetido ao Portal e vídeo de até cinco minutos. O vídeo deve demonstrar execução, entrada/espera/resposta, revisão humana, gráfico/filtros, erro tratado, código, estado/cache, proteção da chave e validações reais.
 
 - Repositório público informado pelo grupo: [luizhenriqueposs7/FRONT_GS_26.2](https://github.com/luizhenriqueposs7/FRONT_GS_26.2).
-- Vídeo final produzido: **5min00s**, MP4 H.264/AAC, 1600 × 900, com narração do grupo e demonstração da solução. No ZIP local de entrega, o arquivo está em `docs/video/ZelaBairro_Final_5min.mp4`.
+- Vídeo final produzido em 12/11/2026: **5min00s**, MP4 H.264/AAC, 1600 × 900, com narração do grupo e demonstração da solução. No ZIP local de entrega, o arquivo está em `docs/video/ZelaBairro_Final_5min.mp4`.
 - Publicação do vídeo: **pendente**. A gravação permanece local; antes da submissão, hospedar no YouTube como não listado ou adicionar o MP4 ao repositório e registrar aqui o link de acesso. A produção do arquivo não equivale à publicação.
 - Roteiro fala por fala: [docs/roteiro-video.md](docs/roteiro-video.md).
 - Verificação Docker: aprovada no GitHub Actions, com link acima; o vídeo apresenta essa evidência.
