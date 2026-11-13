@@ -1,6 +1,6 @@
 # Validação com pessoas
 
-Os registros de P1, P2 e P3 foram fornecidos pelo grupo em 13/11/2026 e estão em [observações, ajustes e comparação visual](evidencias/usabilidade-20261113.md). Segundo o grupo, as sessões ocorreram em sequência, antes das últimas correções. A data e o identificador da versão testada não foram informados. O item de P3 sobre edição do resumo está sinalizado para confirmação.
+Os registros de P1, P2 e P3 foram fornecidos pelo grupo em 13/11/2026 e estão em [observações, ajustes e comparação visual](evidencias/usabilidade-20261113.md). Segundo o grupo, as sessões ocorreram em sequência, antes das últimas correções; P3 utilizou outra versão que permitia editar o resumo. A data e os identificadores das versões testadas não foram informados, e a versão usada por P3 não foi fornecida para análise.
 
 Os ajustes decorrentes do feedback foram implementados e verificados tecnicamente. Um reteste com os participantes após as mudanças não foi informado. O roteiro e a ficha abaixo permanecem disponíveis para registrar a próxima sessão; campos em branco não representam novos resultados.
 

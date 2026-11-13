@@ -12,7 +12,7 @@
 | Justificativa, fonte, ODS e ética | README completo para o escopo da POC; sem alegações de impacto medido. |
 | Três casos reais da IA | Executados; primeiro resultado, ajuste do prompt e reteste preservados. |
 | Três pessoas e ajuste decorrente de feedback | Registros de P1/P2/P3 fornecidos pelo grupo, referentes à versão anterior às correções. Ajustes implementados e verificados; observações, comentários e comparação visual em docs/evidencias/usabilidade-20261113.md. |
-| Contexto da coleta | Data e identificador da versão não informados. Edição do resumo citada por P3 aguarda confirmação; o recurso foi implementado nesta revisão. Reteste com participantes após os ajustes não informado. |
+| Contexto da coleta | Data e identificadores das versões não informados. O grupo confirmou que P3 editou o resumo em outra versão, não fornecida nem identificada por commit. Na base entregue, o recurso foi implementado nesta revisão. Reteste com participantes após os ajustes não informado. |
 | Docker funcionando | Construção, inicialização e endpoints aprovados fora da máquina local no GitHub Actions: https://github.com/luizhenriqueposs7/FRONT_GS_26.2/actions/runs/43371755289. O vídeo apresenta a evidência dessa execução. |
 | GitHub público | Código e evidências publicados em https://github.com/luizhenriqueposs7/FRONT_GS_26.2. A chave privada não foi publicada. |
 | Vídeo até cinco minutos | Arquivo existente verificado: 300 segundos, 1600 × 900, H.264/AAC. Incluído no ZIP local em docs/video/ZelaBairro_Final_5min.mp4. A gravação antecede os ajustes de usabilidade e deve ser atualizada para mostrar as novas evidências. |

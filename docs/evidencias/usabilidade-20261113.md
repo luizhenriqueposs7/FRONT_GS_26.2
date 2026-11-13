@@ -1,6 +1,6 @@
 # Usabilidade — registros do grupo e ajustes
 
-Registros recebidos em 13/11/2026. O grupo informou que os três testes ocorreram em sequência, antes das últimas correções. A data da sessão e o identificador da versão testada não foram informados. Os participantes são apresentados como P1, P2 e P3; nomes e idades foram omitidos da documentação pública.
+Registros recebidos em 13/11/2026. O grupo informou que os três testes ocorreram em sequência, antes das últimas correções, e esclareceu que P3 utilizou outra versão com edição de resumo. A data da sessão e os identificadores das versões testadas não foram informados. Os participantes são apresentados como P1, P2 e P3; nomes e idades foram omitidos da documentação pública.
 
 As observações abaixo foram fornecidas pelo grupo. As capturas e os testes automatizados desta pasta são uma verificação técnica posterior, com dados fictícios, e não registros das sessões dos participantes.
 
@@ -32,9 +32,9 @@ As observações abaixo foram fornecidas pelo grupo. As capturas e os testes aut
 
 **Perfil:** profissional administrativa, utiliza serviços digitais frequentemente e valoriza interfaces objetivas e organizadas.
 
-**Tarefas relatadas:** iniciou um relato de calçada, informou bairro e descrição, analisou as sugestões, confirmou o envio, recebeu protocolo e consultou o status.
+**Tarefas relatadas:** iniciou um relato de calçada, informou bairro e descrição, analisou as sugestões, editou o resumo na outra versão informada pelo grupo, confirmou o envio, recebeu protocolo e consultou o status.
 
-**Ponto a confirmar:** as notas recebidas também dizem que P3 editou o resumo. Tanto o ZIP original quanto a versão anterior às melhorias apresentavam o resumo somente para leitura. Esse item não foi contabilizado como edição concluída na versão anterior; aguarda esclarecimento do grupo. A edição foi implementada nesta revisão.
+**Esclarecimento sobre a versão:** o grupo confirmou que P3 utilizou outra versão do ZelaBairro que permitia editar o resumo. Essa versão não foi fornecida nem identificada por commit; a tarefa é registrada conforme o relato do grupo. O ZIP original analisado tinha resumo somente para leitura, e a edição foi implementada nesta revisão da base entregue.
 
 **Dificuldade:** compreender as etapas do processo e o significado dos status.
 
@@ -44,7 +44,7 @@ As observações abaixo foram fornecidas pelo grupo. As capturas e os testes aut
 
 ## Ajustes implementados em 13/11/2026
 
-| Feedback | Antes | Ajuste implementado | Verificação técnica |
+| Feedback | Antes na base entregue | Ajuste implementado | Verificação técnica |
 |---|---|---|---|
 | P1: edição pouco clara | Categoria e prioridade editáveis; resumo somente para leitura. | Aviso explícito sobre os três campos e editor de resumo, com validação de 5 a 300 caracteres. | Resumo alterado foi enviado e preservado no histórico; valores vazios/curtos foram bloqueados. |
 | P2: protocolo pouco destacado | Número em texto junto à mensagem de sucesso. | Título explicativo e bloco com o número de acompanhamento, disponível para copiar. | Protocolo visível na confirmação e no cartão do histórico. |

@@ -166,7 +166,7 @@ Estes casos sintéticos não estimam acurácia geral nem substituem validação 
 
 ## Validação com pessoas
 
-**Situação: registros de três participantes recebidos do grupo e ajustes implementados.** As sessões foram realizadas em sequência, antes das últimas correções. A data e o identificador da versão testada não foram informados. Os participantes são identificados como P1, P2 e P3 na documentação pública.
+**Situação: registros de três participantes recebidos do grupo e ajustes implementados.** As sessões foram realizadas em sequência, antes das últimas correções. A data e os identificadores das versões testadas não foram informados. Os participantes são identificados como P1, P2 e P3 na documentação pública.
 
 As [observações e a comparação antes/depois](docs/evidencias/usabilidade-20261113.md) preservam o feedback fornecido e distinguem a sessão com pessoas da verificação técnica posterior. O [roteiro e a ficha](docs/validacao.md) ficam disponíveis para uma próxima coleta.
 
@@ -176,7 +176,7 @@ As [observações e a comparação antes/depois](docs/evidencias/usabilidade-202
 | P2 | Uso cotidiano de aplicativos; familiaridade intermediária | Dificuldade para localizar o acompanhamento e compreender termos. | Protocolo destacado como número de acompanhamento e botão direto para o histórico; navegação verificada. |
 | P3 | Profissional administrativa, uso frequente de serviços digitais | Falta de indicação das etapas e de explicação dos status. | Sequência de etapas, descrição do status atual e glossário; interface conferida. |
 
-O relato de edição do resumo por P3 aguarda confirmação: a versão anterior disponibilizava esse conteúdo somente para leitura. A edição foi adicionada nesta revisão. Não foi informado reteste com os participantes após os ajustes; melhora de compreensão é resultado esperado, sem medida comparativa de usabilidade.
+Segundo esclarecimento do grupo, P3 editou o resumo em outra versão do ZelaBairro, não fornecida nem identificada por commit. Na base entregue, a edição foi adicionada nesta revisão. Não foi informado reteste com os participantes após os ajustes; melhora de compreensão é resultado esperado, sem medida comparativa de usabilidade.
 
 ## Entrega e vídeo
 

@@ -76,7 +76,7 @@ Se Docker ainda não foi executado, substituir a segunda fala por: “A configur
 
 **Fala 22:** “Os três participantes relataram dúvidas sobre edição, acompanhamento e status. Com esse feedback, destacamos o protocolo, criamos um acesso direto ao histórico e adicionamos resumo editável e explicações. Os ajustes foram verificados tecnicamente; um reteste com os participantes ainda não foi registrado.”
 
-Mostrar as observações de P1/P2/P3 em `docs/evidencias/usabilidade-20261113.md` e a comparação visual. A edição do resumo citada nas notas de P3 aguarda confirmação; não a apresentar como tarefa concluída na versão anterior. Esta fala atualiza o roteiro escrito e ainda não está na gravação de 12/11.
+Mostrar as observações de P1/P2/P3 em `docs/evidencias/usabilidade-20261113.md` e a comparação visual da base entregue. Se mencionar a edição do resumo por P3, explicar que, segundo o grupo, ela utilizou outra versão, não fornecida para análise. Esta fala atualiza o roteiro escrito e ainda não está na gravação de 12/11.
 
 ## 4:30–4:50 — Limites e encerramento
 
