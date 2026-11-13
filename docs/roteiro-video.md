@@ -32,7 +32,7 @@ Se Docker ainda não foi executado, substituir a segunda fala por: “A configur
 
 **Fala 08:** “O modelo devolve categoria, prioridade, resumo e justificativa em JSON. O Pydantic valida essa estrutura antes de apresentar a sugestão.”
 
-**Fala 09:** “O cidadão pode corrigir a categoria e a prioridade. A confirmação pertence a esta análise: uma nova sugestão exige uma nova revisão.”
+**Fala 09:** “O cidadão pode corrigir a categoria, a prioridade e o resumo. A confirmação pertence a esta análise: uma nova sugestão exige uma nova revisão.”
 
 **Fala 10:** “Após confirmar, o sistema registra o relato e gera um protocolo. Isso representa um registro nesta prova de conceito, sem abertura automática de atendimento municipal.”
 
@@ -40,7 +40,7 @@ Se Docker ainda não foi executado, substituir a segunda fala por: “A configur
 
 **Tela:** Minhas solicitações; painel da gestão com chave oculta; hover e zoom; filtros de categoria e status com dados sintéticos variados; atualização do andamento e atualização do histórico.
 
-**Fala 11:** “O histórico fica no estado da sessão e é apresentado em Minhas solicitações. O botão Atualizar busca mudanças feitas pela gestão.”
+**Fala 11:** “O botão Acompanhar meu relato abre o histórico da sessão, em Minhas solicitações. Cada status tem uma explicação. O botão Atualizar busca mudanças feitas pela gestão.”
 
 **Fala 12:** “Na gestão, o gráfico Plotly apresenta os registros. Estes dois filtros alteram a visualização por categoria e por status.”
 
@@ -74,9 +74,9 @@ Se Docker ainda não foi executado, substituir a segunda fala por: “A configur
 
 **Fala 21:** “Os testes automatizados verificam validação, API, erros de comunicação, cache e revisão humana. São verificações técnicas, não substitutos para os testes com pessoas.”
 
-**Fala 22 — somente após validar com pessoas:** “Testamos com três participantes próximos do público-alvo. A principal dificuldade observada foi [observação real]. A partir desse feedback, alteramos [ajuste real] e verificamos [resultado real].”
+**Fala 22:** “Os três participantes relataram dúvidas sobre edição, acompanhamento e status. Com esse feedback, destacamos o protocolo, criamos um acesso direto ao histórico e adicionamos resumo editável e explicações. Os ajustes foram verificados tecnicamente; um reteste com os participantes ainda não foi registrado.”
 
-Enquanto os testes estiverem pendentes, usar: “A validação com três participantes ainda está pendente; o roteiro e a ficha estão preparados. Não apresentamos esse item como concluído.” Essa fala é transparente, mas o requisito continuará pendente.
+Mostrar as observações de P1/P2/P3 em `docs/evidencias/usabilidade-20261113.md` e a comparação visual. A edição do resumo citada nas notas de P3 aguarda confirmação; não a apresentar como tarefa concluída na versão anterior. Esta fala atualiza o roteiro escrito e ainda não está na gravação de 12/11.
 
 ## 4:30–4:50 — Limites e encerramento
 
@@ -92,4 +92,4 @@ Enquanto os testes estiverem pendentes, usar: “A validação com três partici
 - Relação proposta com sustentabilidade: [ONU Brasil — ODS 11](https://brasil.un.org/pt-br/sdgs/11).
 - Resultados da IA: tabela e arquivo JSON da execução real vinculados no README.
 
-Pendências antes da versão final: vídeo com execução Docker comprovada; resultados reais de três participantes; links de entrega; áudio e sincronização final. Não gravar credenciais ou informações pessoais.
+Pendências antes da versão final: conferir os dados de coleta sinalizados no relatório; atualizar a gravação com as melhorias e as evidências de usabilidade; informar o link de entrega e conferir áudio e sincronização. Não gravar credenciais ou informações pessoais.

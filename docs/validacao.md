@@ -19,9 +19,9 @@ Convidar três moradores ou pessoas próximas do público. Explicar a POC, pedir
 
 Registrar o que a pessoa fez, se precisou de ajuda e o que disse. Não transformar uma expectativa do desenvolvedor em observação da pessoa.
 
-## Ficha por participante
+## Modelo para próxima sessão — não preenchido
 
-| Campo | Registro a preencher após o teste |
+| Campo | Registro a preencher após a próxima sessão |
 |---|---|
 | Identificador anônimo | P1 / P2 / P3 |
 | Data e versão testada | Pendente |
