@@ -1,6 +1,6 @@
 # Vídeo ZelaBairro — fala por fala
 
-Planejamento de até 4min50s, com dez segundos de margem. Os tempos precisam ser confirmados com o áudio real. Gravar cada fala numerada separadamente, na ordem, sem ler as instruções de tela. A montagem deve acompanhar a voz na velocidade natural.
+Versão técnica montada em 13/11/2026: **5min00s**, com a voz original e complementos enviados pelo grupo, em velocidade natural. [Assistir no YouTube — não listado](https://youtu.be/17K65Aqt3Qs). Os tempos e falas abaixo registram o planejamento de referência; a montagem acompanha os tempos medidos na voz. O MP4 está no ZIP local em `docs/video/ZelaBairro_Final_5min.mp4`, com medições em [video/VERIFICACAO.md](video/VERIFICACAO.md).
 
 ## 0:00–0:35 — Problema e público
 
@@ -76,7 +76,7 @@ Se Docker ainda não foi executado, substituir a segunda fala por: “A configur
 
 **Fala 22:** “Os três participantes relataram dúvidas sobre edição, acompanhamento e status. Com esse feedback, destacamos o protocolo, criamos um acesso direto ao histórico e adicionamos resumo editável e explicações. Os ajustes foram verificados tecnicamente; um reteste com os participantes ainda não foi registrado.”
 
-Mostrar as observações de P1/P2/P3 em `docs/evidencias/usabilidade-20261113.md` e a comparação visual da base entregue. Se mencionar a edição do resumo por P3, explicar que, segundo o grupo, ela utilizou outra versão, não fornecida para análise. Esta fala atualiza o roteiro escrito e ainda não está na gravação de 12/11.
+As observações de P1/P2/P3 estão em `docs/evidencias/usabilidade-20261113.md`, com a comparação visual da base entregue. Se mencionar a edição do resumo por P3, explicar que, segundo o grupo, ela utilizou outra versão, não fornecida para análise. A gravação de 13/11 incorpora os registros e ajustes com narração complementar; a origem de 12/11 permanece preservada no projeto local de montagem.
 
 ## 4:30–4:50 — Limites e encerramento
 
@@ -92,4 +92,4 @@ Mostrar as observações de P1/P2/P3 em `docs/evidencias/usabilidade-20261113.md
 - Relação proposta com sustentabilidade: [ONU Brasil — ODS 11](https://brasil.un.org/pt-br/sdgs/11).
 - Resultados da IA: tabela e arquivo JSON da execução real vinculados no README.
 
-Pendências antes da versão final: conferir os dados de coleta sinalizados no relatório; atualizar a gravação com as melhorias e as evidências de usabilidade; informar o link de entrega e conferir áudio e sincronização. Não gravar credenciais ou informações pessoais.
+Antes da submissão: conferir os dados de coleta sinalizados no relatório, ouvir as junções da narração e enviar no Portal o repositório e o link do vídeo já hospedado. As credenciais e os áudios originais permanecem fora do pacote.

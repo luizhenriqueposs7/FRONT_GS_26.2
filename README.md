@@ -2,6 +2,8 @@
 
 Front-end em Sistemas de IA · CitizenTech · FIAP
 
+**Vídeo de demonstração (5min00s):** [assistir no YouTube](https://youtu.be/17K65Aqt3Qs).
+
 | Integrante | RM |
 |---|---|
 | Luiz Henrique Poss | 562177 |
@@ -183,12 +185,12 @@ Segundo esclarecimento do grupo, P3 editou o resumo em outra versão do ZelaBair
 O enunciado exige um único repositório **público no GitHub**, link submetido ao Portal e vídeo de até cinco minutos. O vídeo deve demonstrar execução, entrada/espera/resposta, revisão humana, gráfico/filtros, erro tratado, código, estado/cache, proteção da chave e validações reais.
 
 - Repositório público informado pelo grupo: [luizhenriqueposs7/FRONT_GS_26.2](https://github.com/luizhenriqueposs7/FRONT_GS_26.2).
-- Vídeo final produzido em 12/11/2026: **5min00s**, MP4 H.264/AAC, 1600 × 900, com narração do grupo e demonstração da solução. No ZIP local de entrega, o arquivo está em `docs/video/ZelaBairro_Final_5min.mp4`.
-- Atualização da gravação: **pendente**. O vídeo de 12/11 antecede os ajustes de usabilidade e ainda apresenta a validação com pessoas como pendente; a próxima versão deve mostrar os registros recebidos e as mudanças implementadas.
-- Publicação do vídeo: **pendente**. A gravação permanece local; antes da submissão, hospedar no YouTube como não listado ou adicionar o MP4 ao repositório e registrar aqui o link de acesso. A produção do arquivo não equivale à publicação.
+- Vídeo técnico atualizado em 13/11/2026: **5min00s**, MP4 H.264/AAC, 1600 × 900, 25 fps, com narração do grupo em velocidade natural. No ZIP local de entrega, o arquivo está em `docs/video/ZelaBairro_Final_5min.mp4`. Medições e limites da revisão em [docs/video/VERIFICACAO.md](docs/video/VERIFICACAO.md).
+- Atualização da gravação: **concluída localmente**. A nova montagem mostra a interface corrigida, chamada real à Groq, protocolo/acompanhamento, gráfico e filtros, falha controlada, código da chamada, estado/cache, proteção da chave e evidências de IA/usabilidade. A narração antiga sobre testes com pessoas pendentes foi substituída pelos registros fornecidos e pelos ajustes implementados; não é alegado reteste humano após as correções.
+- Vídeo publicado no YouTube como **não listado**: [ZelaBairro Tecnico Final FRONT_GS 26.2 — 5min00s](https://youtu.be/17K65Aqt3Qs). Página, indicação de duração e início da reprodução conferidos em 14/11/2026. As medições do relatório referem-se ao MP4 local, antes da recodificação do YouTube.
 - Roteiro fala por fala: [docs/roteiro-video.md](docs/roteiro-video.md).
 - Verificação Docker: aprovada no GitHub Actions, com link acima; o vídeo apresenta essa evidência.
 
 O workflow em `.github/workflows/validacao.yml` executa testes e um smoke test Docker quando o projeto é enviado ao GitHub. A execução aprovada acima comprova os resultados do código no commit indicado; não substitui os testes de usabilidade.
 
-Antes de submeter no Portal, conferir os dados de coleta sinalizados no relatório, atualizar a gravação com as evidências de usabilidade e informar o acesso ao vídeo. Os itens verificados estão discriminados em [CHECKLIST_ENTREGA.md](CHECKLIST_ENTREGA.md).
+Antes de submeter no Portal, conferir os dados de coleta sinalizados no relatório, ouvir as junções da narração e enviar o link deste repositório junto com o [vídeo](https://youtu.be/17K65Aqt3Qs). Os itens verificados estão discriminados em [CHECKLIST_ENTREGA.md](CHECKLIST_ENTREGA.md). A submissão no Portal não foi realizada por esta conferência.

@@ -82,4 +82,4 @@ Os 42 testes automatizados passaram, incluindo edição/persistência do resumo,
 
 O aprendizado foi tornar explícitas ações que estavam disponíveis ou implícitas: o cidadão pode revisar a sugestão, precisa reconhecer seu número de acompanhamento e deve compreender o status sem conhecer o funcionamento interno da POC.
 
-Melhor compreensão e maior facilidade de uso são resultados esperados. Não foi informado reteste com os participantes após os ajustes; não há medida comparativa de tempo, sucesso ou satisfação. A gravação de 12/11/2026 antecede estas melhorias e deve ser atualizada para mostrar as evidências recebidas e os ajustes antes da submissão.
+Melhor compreensão e maior facilidade de uso são resultados esperados. Não foi informado reteste com os participantes após os ajustes; não há medida comparativa de tempo, sucesso ou satisfação. A gravação técnica de 13/11/2026 incorporou estas evidências e os ajustes e está [publicada no YouTube como não listada](https://youtu.be/17K65Aqt3Qs). A origem de 12/11 permanece preservada no projeto local de montagem.
