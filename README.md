@@ -168,9 +168,9 @@ Estes casos sintéticos não estimam acurácia geral nem substituem validação 
 
 ## Validação com pessoas
 
-**Situação: registros de três participantes recebidos do grupo e ajustes implementados.** As sessões foram realizadas em sequência, antes das últimas correções. A data e os identificadores das versões testadas não foram informados. Os participantes são identificados como P1, P2 e P3 na documentação pública.
+**Três participantes e ajustes implementados a partir do feedback.** As sessões ocorreram em sequência, antes das últimas correções. A data e os identificadores das versões testadas não constam nos registros. Os participantes são identificados como P1, P2 e P3 na documentação pública.
 
-As [observações e a comparação antes/depois](docs/evidencias/usabilidade-20261113.md) preservam o feedback fornecido e distinguem a sessão com pessoas da verificação técnica posterior. O [roteiro e a ficha](docs/validacao.md) ficam disponíveis para uma próxima coleta.
+As [observações e a comparação antes/depois](docs/evidencias/usabilidade-20261113.md) relacionam os comentários dos participantes às mudanças realizadas. O [roteiro de tarefas](docs/validacao.md) descreve o escopo da validação. As imagens e os testes automatizados registram a verificação técnica posterior.
 
 | Participante | Perfil geral | Observação relatada | Ajuste implementado e verificação |
 |---|---|---|---|
@@ -178,19 +178,14 @@ As [observações e a comparação antes/depois](docs/evidencias/usabilidade-202
 | P2 | Uso cotidiano de aplicativos; familiaridade intermediária | Dificuldade para localizar o acompanhamento e compreender termos. | Protocolo destacado como número de acompanhamento e botão direto para o histórico; navegação verificada. |
 | P3 | Profissional administrativa, uso frequente de serviços digitais | Falta de indicação das etapas e de explicação dos status. | Sequência de etapas, descrição do status atual e glossário; interface conferida. |
 
-Segundo esclarecimento do grupo, P3 editou o resumo em outra versão do ZelaBairro, não fornecida nem identificada por commit. Na base entregue, a edição foi adicionada nesta revisão. Não foi informado reteste com os participantes após os ajustes; melhora de compreensão é resultado esperado, sem medida comparativa de usabilidade.
+O registro de P3 informa edição do resumo em outra versão do ZelaBairro, sem commit identificado. O ZIP inicial tinha resumo somente para leitura; a versão atual permite edição. Não há registro de reteste com os participantes após os ajustes. Melhor compreensão é um resultado esperado, sem medida comparativa de usabilidade.
 
 ## Entrega e vídeo
 
-O enunciado exige um único repositório **público no GitHub**, link submetido ao Portal e vídeo de até cinco minutos. O vídeo deve demonstrar execução, entrada/espera/resposta, revisão humana, gráfico/filtros, erro tratado, código, estado/cache, proteção da chave e validações reais.
+- Repositório público: [luizhenriqueposs7/FRONT_GS_26.2](https://github.com/luizhenriqueposs7/FRONT_GS_26.2).
+- Vídeo de demonstração: [ZelaBairro — 5min00s, YouTube não listado](https://youtu.be/17K65Aqt3Qs).
+- [Requisitos e evidências da entrega](CHECKLIST_ENTREGA.md).
 
-- Repositório público informado pelo grupo: [luizhenriqueposs7/FRONT_GS_26.2](https://github.com/luizhenriqueposs7/FRONT_GS_26.2).
-- Vídeo técnico atualizado em 13/11/2026: **5min00s**, MP4 H.264/AAC, 1600 × 900, 25 fps, com narração do grupo em velocidade natural. No ZIP local de entrega, o arquivo está em `docs/video/ZelaBairro_Final_5min.mp4`. Medições e limites da revisão em [docs/video/VERIFICACAO.md](docs/video/VERIFICACAO.md).
-- Atualização da gravação: **concluída localmente**. A nova montagem mostra a interface corrigida, chamada real à Groq, protocolo/acompanhamento, gráfico e filtros, falha controlada, código da chamada, estado/cache, proteção da chave e evidências de IA/usabilidade. A narração antiga sobre testes com pessoas pendentes foi substituída pelos registros fornecidos e pelos ajustes implementados; não é alegado reteste humano após as correções.
-- Vídeo publicado no YouTube como **não listado**: [ZelaBairro Tecnico Final FRONT_GS 26.2 — 5min00s](https://youtu.be/17K65Aqt3Qs). Página, indicação de duração e início da reprodução conferidos em 14/11/2026. As medições do relatório referem-se ao MP4 local, antes da recodificação do YouTube.
-- Roteiro fala por fala: [docs/roteiro-video.md](docs/roteiro-video.md).
-- Verificação Docker: aprovada no GitHub Actions, com link acima; o vídeo apresenta essa evidência.
+O vídeo apresenta o registro de um relato com Groq real, revisão humana, protocolo, acompanhamento, gráfico e filtros, falha tratada, arquitetura, chamada ao LLM, estado/cache e evidências de validação.
 
-O workflow em `.github/workflows/validacao.yml` executa testes e um smoke test Docker quando o projeto é enviado ao GitHub. A execução aprovada acima comprova os resultados do código no commit indicado; não substitui os testes de usabilidade.
-
-Antes de submeter no Portal, conferir os dados de coleta sinalizados no relatório, ouvir as junções da narração e enviar o link deste repositório junto com o [vídeo](https://youtu.be/17K65Aqt3Qs). Os itens verificados estão discriminados em [CHECKLIST_ENTREGA.md](CHECKLIST_ENTREGA.md). A submissão no Portal não foi realizada por esta conferência.
+O workflow em `.github/workflows/validacao.yml` executa os testes e a verificação Docker. Os resultados automatizados complementam os testes com pessoas; não os substituem.

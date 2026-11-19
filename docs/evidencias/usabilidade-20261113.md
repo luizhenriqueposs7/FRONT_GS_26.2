@@ -1,8 +1,8 @@
-# Usabilidade — registros do grupo e ajustes
+# Usabilidade — observações e ajustes
 
-Registros recebidos em 13/11/2026. O grupo informou que os três testes ocorreram em sequência, antes das últimas correções, e esclareceu que P3 utilizou outra versão com edição de resumo. A data da sessão e os identificadores das versões testadas não foram informados. Os participantes são apresentados como P1, P2 e P3; nomes e idades foram omitidos da documentação pública.
+Registros consolidados em 13/11/2026. Os três testes ocorreram em sequência, antes das últimas correções. O registro de P3 refere-se a outra versão com edição de resumo. A data das sessões e os identificadores das versões testadas não constam nos registros. Os participantes são apresentados como P1, P2 e P3; nomes e idades foram omitidos da documentação pública.
 
-As observações abaixo foram fornecidas pelo grupo. As capturas e os testes automatizados desta pasta são uma verificação técnica posterior, com dados fictícios, e não registros das sessões dos participantes.
+As observações e os comentários abaixo correspondem aos relatos registrados das sessões. As capturas e os testes automatizados desta pasta são uma verificação técnica posterior, com dados fictícios, e não registros das sessões dos participantes.
 
 ## P1
 
@@ -32,9 +32,9 @@ As observações abaixo foram fornecidas pelo grupo. As capturas e os testes aut
 
 **Perfil:** profissional administrativa, utiliza serviços digitais frequentemente e valoriza interfaces objetivas e organizadas.
 
-**Tarefas relatadas:** iniciou um relato de calçada, informou bairro e descrição, analisou as sugestões, editou o resumo na outra versão informada pelo grupo, confirmou o envio, recebeu protocolo e consultou o status.
+**Tarefas relatadas:** iniciou um relato de calçada, informou bairro e descrição, analisou as sugestões, editou o resumo em outra versão do sistema, confirmou o envio, recebeu protocolo e consultou o status.
 
-**Esclarecimento sobre a versão:** o grupo confirmou que P3 utilizou outra versão do ZelaBairro que permitia editar o resumo. Essa versão não foi fornecida nem identificada por commit; a tarefa é registrada conforme o relato do grupo. O ZIP original analisado tinha resumo somente para leitura, e a edição foi implementada nesta revisão da base entregue.
+**Versão utilizada:** o registro de P3 informa edição do resumo em uma versão do ZelaBairro sem commit identificado. Essa versão não está incluída no ZIP inicial, que tinha resumo somente para leitura. A versão atual implementa a edição do resumo. A tarefa de P3 está documentada conforme o relato da sessão, sem verificação independente dessa versão anterior.
 
 **Dificuldade:** compreender as etapas do processo e o significado dos status.
 
@@ -82,4 +82,4 @@ Os 42 testes automatizados passaram, incluindo edição/persistência do resumo,
 
 O aprendizado foi tornar explícitas ações que estavam disponíveis ou implícitas: o cidadão pode revisar a sugestão, precisa reconhecer seu número de acompanhamento e deve compreender o status sem conhecer o funcionamento interno da POC.
 
-Melhor compreensão e maior facilidade de uso são resultados esperados. Não foi informado reteste com os participantes após os ajustes; não há medida comparativa de tempo, sucesso ou satisfação. A gravação técnica de 13/11/2026 incorporou estas evidências e os ajustes e está [publicada no YouTube como não listada](https://youtu.be/17K65Aqt3Qs). A origem de 12/11 permanece preservada no projeto local de montagem.
+Melhor compreensão e maior facilidade de uso são resultados esperados. Não há registro de reteste com os participantes após os ajustes nem medida comparativa de tempo, sucesso ou satisfação. O [vídeo de demonstração](https://youtu.be/17K65Aqt3Qs) apresenta as evidências e as mudanças realizadas.
